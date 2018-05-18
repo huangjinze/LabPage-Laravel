@@ -1,95 +1,117 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('title', 'Projects/科研项目')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('navbar')
+    @parent
+@endsection
+@section('content')
+        <!-- banner -->
+<div class="banner">
+    <!-- banner Slider starts Here -->
+    <script src="Front_js/responsiveslides.min.js"></script>
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 4
+            $("#slider3").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        });
+    </script>
+    <!--//End-slider-script -->
+    <div  id="top" class="callbacks_container">
+        <ul class="rslides" id="slider3">
+            <li>
+                <div class="banner-bg">
+                    <div class="container">
+                        <div class="banner-info">
+                            <h3>Take the first step<span>to knowledge friends</span></h3>
+                            <p>Inspired by Brasil’s bold colors and matching up to football’s on-pitch
+                                playmakers, these kicks are ready to stand out.
+                            </p>
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+                        </div>
+                    </div>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+            </li>
+            <li>
+                <div class="banner-bg banner-img2">
+                    <div class="container">
+                        <div class="banner-info">
+                            <h3>Stay in touch<span>Lorem Ipsum</span></h3>
+                            <p>Inspired by bold colors and matching up to football’s on-pitch
+                                playmakers, these kicks are ready to stand out.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            </li>
+            <li>
+                <div class="banner-bg banner-img">
+                    <div class="container">
+                        <div class="banner-info">
+                            <h3>therefore always<span>looks reasonable</span></h3>
+                            <p>Inspired by Brasil’s bold colors and matching up to football’s on-pitch
+                                playmakers, these Brasil’s kicks are ready to stand out.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+            </li>
+            <li>
+                <div class="banner-bg">
+                    <div class="container">
+                        <div class="banner-info">
+                            <h3>dolore magna<span>eaque ipsa</span></h3>
+                            <p>Inspired by bold colors and matching up to football’s on-pitch
+                                playmakers, these kicks are ready to stand out.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="banner-bg banner-img2">
+                    <div class="container">
+                        <div class="banner-info">
+                            <h3> trivial example,<span>who chooses</span></h3>
+                            <p>Inspired by Brasil’s bold colors and matching up to football’s on-pitch
+                                playmakers, these kicks Brasil’s are ready to stand out.
+                            </p>
+                       </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<!-- //banner -->
+
+<!-- //banner -->
+<div class="features">
+    <div class="container">
+            {!! $group->introduction !!}
+    </div>
+</div>
+@endsection
+
+
+
+@section('footer')
+    @parent
+    <script src="Front_js/jquery.countdown.js"></script>
+    <script src="Front_js/script.js"></script>
+@endsection
